@@ -29,7 +29,6 @@ public class SortingAlgs {
         System.out.println("Time to complete: " + mergeSortTime + " Milliseconds");
         System.out.println("Total lines of code: 33");
         System.out.println("");
-
     }
 
     public static int[] generateArray(){
@@ -41,22 +40,7 @@ public class SortingAlgs {
         System.out.println(Arrays.toString(array));
         return array;
     }
-
     
-    //Bubble sort
-    private static long BubbleSort(int[] A, int n) {
-        Instant start = Instant.now();
-        for(int i = 0; i < n; i++) {
-            for(int j = 1; j < (n - i); j++) {
-                if(A[j-1] > A[j]) {
-                    int temp = A[j-1];A[j-1] = A[j];A[j] = temp;
-                }
-            }
-        }
-        Instant end = Instant.now();
-        return Duration.between(start, end).toMillis();
-    }
-
     //Selection sort
     private static long selectionSort(int[] A, int n) {
         Instant start = Instant.now();
@@ -78,7 +62,21 @@ public class SortingAlgs {
         return Duration.between(start, end).toMillis();
     }
 
+    //Bubble sort
+    private static long BubbleSort(int[] A, int n) {
+        Instant start = Instant.now();
+        for(int i = 0; i < n; i++) {
+            for(int j = 1; j < (n - i); j++) {
+                if(A[j-1] > A[j]) {
+                    int temp = A[j-1];A[j-1] = A[j];A[j] = temp;
+                }
+            }
+        }
+        Instant end = Instant.now();
+        return Duration.between(start, end).toMillis();
+    }
 
+    //merge sort
     private static long mergeSort(int[] A, int low, int high) {
         Instant start = Instant.now();
         if(low < high){
@@ -91,6 +89,7 @@ public class SortingAlgs {
         return Duration.between(start, end).toMillis();
     }
 
+    //merge sort part 2. This merges the two arrays together into one array.
     private static void merge(int A[], int low, int mid, int high) {
         int[] b = new int[(mid-low) + 1];
         int[] c = new int[(high - mid)];
