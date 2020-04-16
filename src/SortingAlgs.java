@@ -10,9 +10,11 @@ public class SortingAlgs {
         int[] forSS = x;
         int[] forBS = x;
         int[] forMS = x;
+        int[] forQS = x;
         long selectionSortTime = selectionSort(forSS, forSS.length);
         long bubbleSortTime = BubbleSort(forBS,forBS.length);
         long mergeSortTime = mergeSort(x,0, (x.length -1));
+        long quickSortTime = quickSort(x, 0, (x.length-1));
         System.out.println("-------------------------------");
         System.out.println("New order using Selection Sort:");
         System.out.println(Arrays.toString(forSS));
@@ -28,6 +30,11 @@ public class SortingAlgs {
         System.out.println(Arrays.toString(forMS));
         System.out.println("Time to complete: " + mergeSortTime + " Milliseconds");
         System.out.println("Total lines of code: 33");
+        System.out.println("");
+        System.out.println("New order using Quick Sort:");
+        System.out.println(Arrays.toString(forQS));
+        System.out.println("Time to complete: " + quickSortTime + " Milliseconds");
+        System.out.println("Total lines of code: 18");
         System.out.println("");
     }
 
@@ -130,5 +137,36 @@ public class SortingAlgs {
         }
     }
 
+
+    private static long quickSort(int[] A, int low, int high) {
+        Instant start = Instant.now();
+        if( low > high) {
+            return 0;
+        }
+        else {
+            int i = partition(A, low, high);
+            quickSort(A, low, i-1);
+            quickSort(A, i+1, high);
+        }
+        Instant end = Instant.now();
+        return Duration.between(start, end).toMillis();
+    }
+
+    private static int partition(int[] A, int low, int high) {
+        int pivot = A[high];
+        int i = low - 1;
+        for(int j = low; j <= high - 1; j++) {
+            if(A[j] <= pivot) {
+                i++;
+                int temp = A[i];
+                A[i] = A[j];
+                A[j] = temp;
+            }
+        }
+        int temp = A[i + 1];
+        A[i + 1] = A[high];
+        A[high] = temp;
+        return i + 1;
+    }
 
 }
