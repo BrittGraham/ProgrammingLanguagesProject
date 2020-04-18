@@ -138,6 +138,7 @@ public class SortingAlgs {
     }
 
 
+    //Quick sort
     private static long quickSort(int[] A, int low, int high) {
         Instant start = Instant.now();
         if( low > high) {
