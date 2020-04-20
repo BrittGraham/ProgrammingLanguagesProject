@@ -1,6 +1,7 @@
 import sys
 import random
 import time
+import copy
 
 def generateArray(size):
     array = []
@@ -106,54 +107,55 @@ def report():
     print("Random Array:")
     SIZE = 10
     arr = generateArray(SIZE)
-    # arr = x
-    forSS = arr
-    forBS = arr
-    forMS = arr
-    forQS = arr
 
-    # print("BEFORE SORTING")
-    # print("SS: ", forSS)
-    # print("BS: ", forBS)
-    # print("MS: ", forMS)
-    # print("QS: ", forQS)
+    #Must create shallow copies of `arr` since I want modify values in the new array without changing the old one.
+    forSS = copy.copy(arr)
+    forBS = copy.copy(arr)
+    forMS = copy.copy(arr)
+    forQS = copy.copy(arr)
+
+    print("BEFORE SORTING")
+    print("SS: ", forSS)
+    print("BS: ", forBS)
+    print("MS: ", forMS)
+    print("QS: ", forQS)
 
     selectTime = selectionSort(forSS, len(forSS))
-    # print("-------------------------------")
-    # print("AFTER SELECTION SORT")
+    print("-------------------------------")
+    print("AFTER SELECTION SORT")
 
-    # print("SS: ", forSS)
-    # print("BS: ", forBS)
-    # print("MS: ", forMS)
-    # print("QS: ", forQS)
+    print("SS: ", forSS)
+    print("BS: ", forBS)
+    print("MS: ", forMS)
+    print("QS: ", forQS)
 
     
     bubbleTime = bubbleSort(forBS, len(forBS))
-    # print("-------------------------------")
-    # print("AFTER BUBBLE SORT")
+    print("-------------------------------")
+    print("AFTER BUBBLE SORT")
 
-    # print("SS: ", forSS)
-    # print("BS: ", forBS)
-    # print("MS: ", forMS)
-    # print("QS: ", forQS)
+    print("SS: ", forSS)
+    print("BS: ", forBS)
+    print("MS: ", forMS)
+    print("QS: ", forQS)
 
     mergeTime = mergeSort(forMS, 0, (len(forMS)-1))
-    # print("-------------------------------")
-    # print("AFTER MERGE SORT")
+    print("-------------------------------")
+    print("AFTER MERGE SORT")
 
-    # print("SS: ", forSS)
-    # print("BS: ", forBS)
-    # print("MS: ", forMS)
-    # print("QS: ", forQS)
+    print("SS: ", forSS)
+    print("BS: ", forBS)
+    print("MS: ", forMS)
+    print("QS: ", forQS)
 
     quickTime = quickSort(forQS, 0, (len(forQS)-1))
-    # print("-------------------------------")
-    # print("AFTER QUICK SORT")
+    print("-------------------------------")
+    print("AFTER QUICK SORT")
 
-    # print("SS: ", forSS)
-    # print("BS: ", forBS)
-    # print("MS: ", forMS)
-    # print("QS: ", forQS)
+    print("SS: ", forSS)
+    print("BS: ", forBS)
+    print("MS: ", forMS)
+    print("QS: ", forQS)
    
 
     # print("-------------------------------")
