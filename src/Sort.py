@@ -28,14 +28,6 @@ def selectionSort(A, n):
             A[minimum] = A[i]
             A[i] = temp
         i += 1
-
-    # for i in range(n):
-    #     min = i
-    #     for j in range(i+1, n):
-    #         if(A[min] > A[j]):
-    #             min = j
-    #     A[i], A[min] = A[min], A[i]
-        # print(A)
     end = time.time()
     MILLI = 1000
     duration = (end - start)*MILLI
@@ -43,9 +35,16 @@ def selectionSort(A, n):
 
 def bubbleSort(A, n):
     start = time.time()
-    #TODO: Bubble Sort Algorithm
-
-    # print(A)
+    i = 0
+    while i < n:
+        j = 1
+        while j < (n - i):
+            if A[j - 1] > A[j]:
+                temp = A[j - 1]
+                A[j-1] = A[j]
+                A[j] = temp
+            j += 1
+        i += 1
     end = time.time()
     MILLI = 1000
     duration = (end - start)*MILLI
@@ -55,7 +54,6 @@ def mergeSort(A, low, high):
     start = time.time()
     #TODO: Merge Sort Algorithm
 
-    # print(A)
     end = time.time()
     MILLI = 1000
     duration = (end - start)*MILLI
@@ -108,7 +106,7 @@ def report():
     SIZE = 10
     arr = generateArray(SIZE)
 
-    #Must create shallow copies of `arr` since I want modify values in the new array without changing the old one.
+    # Must create shallow copies of `arr` since I want modify values in the new array without changing the old one.
     forSS = copy.copy(arr)
     forBS = copy.copy(arr)
     forMS = copy.copy(arr)
