@@ -9,7 +9,7 @@ def generateArray(size):
     for i in range(0, size):
         #TODO: Change back to (-999, 999)
         array.append(random.randint(-9, 9))
-    print(array, "\n")
+    # print("arrary of size", size, ":", array, "\n")
     return array
 
 def selectionSort(A, n):
@@ -52,8 +52,11 @@ def bubbleSort(A, n):
 
 def mergeSort(A, low, high):
     start = time.time()
-    #TODO: Merge Sort Algorithm
-
+    if low < high:
+        middle = int((low + high)/2)
+        mergeSort(A, low, middle)
+        mergeSort(A, middle+1, high)
+        merge(A, low, middle, high)
     end = time.time()
     MILLI = 1000
     duration = (end - start)*MILLI
@@ -63,10 +66,42 @@ def merge(A, low, mid, high):
     '''
     Merge Sort part 2: Merges the two arrays together into one array.
     '''
-    b = generateArray(mid - low + 1)
+    #TODO: Complete merge()
+    b = generateArray((mid - low) + 1)
     c = generateArray(high - mid)
+    i = 0
+    while i < len(b):
+        b[i] = A[low + i]
+        i += 1
+    j = 0
+    while j < len(c):
+        c[j] = A[(mid + 1) + j]
+        j += 1
 
-    #TODO: Merge arrays
+    k = low
+    i = 0
+    j = 0
+    while i < len(b) and j < len(c):
+        if b[i] < c[j]:
+            A[k] = b[i]
+            i += 1
+            k += 1
+        else:
+            A[k] = c[j]
+            j += 1
+            k += 1
+
+    if i is len(b):
+        while j < len(c):
+            A[k] = c[j]
+            j += 1
+            k += 1
+    else:
+        while i < len(b):
+            A[k] = b[i]
+            i += 1
+            k += 1
+
 
 
 def quickSort(A, low, high):
@@ -102,9 +137,9 @@ def partition(A, low, high):
 
 
 def report():
-    print("Random Array:")
     SIZE = 10
     arr = generateArray(SIZE)
+    print("Random Array:", "\n", arr)
 
     # Must create shallow copies of `arr` since I want modify values in the new array without changing the old one.
     forSS = copy.copy(arr)
