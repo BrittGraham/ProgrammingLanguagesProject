@@ -5,6 +5,10 @@ import java.util.Random;
 
 public class SortingAlgs {
     public static void main(String[] args) {
+        int a = 1;
+        int b = 3;
+        System.out.println((-a + b));
+        
         System.out.println("Random Array:");
         int[] x = generateArray();
         int[] forSS = x;
