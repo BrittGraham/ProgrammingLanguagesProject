@@ -5,10 +5,6 @@ import java.util.Random;
 
 public class SortingAlgs {
     public static void main(String[] args) {
-        int a = 1;
-        int b = 3;
-        System.out.println((-a + b));
-
         System.out.println("Random Array:");
         int[] x = generateArray();
         int[] forSS = x;
@@ -28,7 +24,7 @@ public class SortingAlgs {
         System.out.println("New order using Bubble Sort:");
         System.out.println(Arrays.toString(forBS));
         System.out.println("Time to complete: " + bubbleSortTime + " Milliseconds");
-        System.out.println("Total lines of code: 4");
+        System.out.println("Total lines of code: 6");
         System.out.println("");
         System.out.println("New order using Merge Sort:");
         System.out.println(Arrays.toString(forMS));
@@ -46,7 +42,7 @@ public class SortingAlgs {
         Random random = new Random();
         int[] array = new int[1000];
         for(int i = 0; i < array.length; i++){
-            array[i] = (random.nextInt())%1000;
+            array[i] = (random.nextInt(1000));
         }
         System.out.println(Arrays.toString(array));
         return array;
