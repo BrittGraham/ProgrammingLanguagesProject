@@ -42,7 +42,7 @@ public class SortingAlgs {
         Random random = new Random();
         int[] array = new int[1000];
         for(int i = 0; i < array.length; i++){
-            array[i] = (random.nextInt(1000));
+            array[i] = (random.nextInt()%1000);
         }
         System.out.println(Arrays.toString(array));
         return array;
