@@ -130,9 +130,9 @@ def partition(A, low, high):
     return i + 1
 
 def report():
-    SIZE = 1000
+    SIZE = 7800
     arr = generateArray(SIZE)
-    print("Random Array:", "\n", arr)
+    #print("Random Array:", "\n", arr)
     # Must create shallow copies of `arr` since I want modify values in the new array without changing the old one.
     forSS = copy.copy(arr)
     forBS = copy.copy(arr)
@@ -145,22 +145,22 @@ def report():
     #TODO: Count code lines for each algorithm
     print("-------------------------------")
     print("New order using Selection Sort:")
-    print(forSS)
+    #print(forSS)
     print("Time to complete: ", selectTime, "Milliseconds")
     print("Total lines of code: 14")
     print("-------------------------------")
     print("New order using Bubble Sort:")
-    print(forBS)
+    #print(forBS)
     print("Time to complete: ", bubbleTime, "Milliseconds")
     print("Total lines of code: 10")
     print("-------------------------------")
     print("New order using Merge Sort:")
-    print(forMS)
+    #print(forMS)
     print("Time to complete: ", mergeTime, "Milliseconds")
     print("Total lines of code: 37")
     print("-------------------------------")
     print("New order using Quick Sort:")
-    print(forQS)
+    #print(forQS)
     print("Time to complete: ", quickTime, "Milliseconds")
     print("Total lines of code: 19")
 

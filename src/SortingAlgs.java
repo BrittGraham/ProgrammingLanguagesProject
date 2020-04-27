@@ -40,7 +40,7 @@ public class SortingAlgs {
 
     public static int[] generateArray(){
         Random random = new Random();
-        int[] array = new int[1000];
+        int[] array = new int[7800];
         for(int i = 0; i < array.length; i++){
             array[i] = (random.nextInt()%1000);
         }
@@ -143,10 +143,7 @@ public class SortingAlgs {
     //Quick sort
     private static long quickSort(int[] A, int low, int high) {
         Instant start = Instant.now();
-        if( low > high) {
-            return 0;
-        }
-        else {
+        if( low < high) {
             int i = partition(A, low, high);
             quickSort(A, low, i-1);
             quickSort(A, i+1, high);
