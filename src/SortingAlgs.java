@@ -34,7 +34,7 @@ public class SortingAlgs {
         System.out.println("New order using Quick Sort:");
         System.out.println(Arrays.toString(forQS));
         System.out.println("Time to complete: " + quickSortTime + " Milliseconds");
-        System.out.println("Total lines of code: 18");
+        System.out.println("Total lines of code: 16");
         System.out.println("");
     }
 
